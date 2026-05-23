@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1a0f0a;
+  --background-gradient-start: #2a1b17;
+  --background-gradient-end: #1a0f0a;
+  --foreground: #ffe9dc;
+  --foreground-secondary: #ffbcb6;
+  --card: #3a241f;
+  --card-foreground: #ffe9dc;
+  --accent: #ffb28c;
+  --accent-foreground: #1a0f0a;
+  --muted: #2a1b17;
+  --muted-foreground: #ffbcb6;
+  --border: rgba(255, 178, 140, 0.15);
+  --input: #2a1b17;
+  --input-foreground: #ffe9dc;
+  --user-bubble: rgba(255, 178, 140, 0.2);
+  --user-bubble-foreground: #ffe9dc;
+  --ai-bubble: #3a241f;
+  --ai-bubble-foreground: #ffe9dc;
+  --sidebar: #2a1b17;
+  --sidebar-active: rgba(255, 178, 140, 0.15);
+  --sidebar-hover: rgba(255, 178, 140, 0.08);
+  --radius: 1rem;
+  --typing-dot: #ffb28c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-foreground: var(--input-foreground);
+  --color-user-bubble: var(--user-bubble);
+  --color-user-bubble-foreground: var(--user-bubble-foreground);
+  --color-ai-bubble: var(--ai-bubble);
+  --color-ai-bubble-foreground: var(--ai-bubble-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-sidebar-hover: var(--sidebar-hover);
+  --color-typing-dot: var(--typing-dot);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-lg: var(--radius);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 178, 140, 0.2) transparent;
+}
+
+body {
+  background: linear-gradient(180deg, var(--background-gradient-start), var(--background-gradient-end));
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-typing-1 {
+  animation: typing-bounce 1.4s ease-in-out infinite;
+}
+.animate-typing-2 {
+  animation: typing-bounce 1.4s ease-in-out 0.2s infinite;
+}
+.animate-typing-3 {
+  animation: typing-bounce 1.4s ease-in-out 0.4s infinite;
+}
